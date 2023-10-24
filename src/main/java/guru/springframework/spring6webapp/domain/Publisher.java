@@ -20,6 +20,7 @@ public class Publisher {
     public Publisher() {
     }
 
+
     @Override
     public String toString() {
         return "Publisher{" +
@@ -44,6 +45,9 @@ public class Publisher {
     public int hashCode() {
         return getId() != null ? getId().hashCode() : 0;
     }
+
+    @OneToMany(mappedBy = "publisher")
+    private Set<Book> books;
 
     public Long getId() {
         return id;
@@ -94,5 +98,9 @@ public class Publisher {
     }
 
     public void setName(String sfgPublishing) {
+    }
+
+    public void setPublisher(String s) {
+
     }
 }
